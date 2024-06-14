@@ -1,0 +1,9 @@
+lang: es-ES
+title: "Herramientas para la elaboración rápida de materiales docentes"
+subtitle: "Uso de Markdown y Pandoc para la confección de documentos, presentaciones, y más"
+author:
+    - Juan Antonio Villegas
+institute:
+    - Departamento de Matemática Aplicada. Universidad de Granada
+date: \today
+theme: Luebeck

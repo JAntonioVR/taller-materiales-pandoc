@@ -1,0 +1,10 @@
+lang: es-ES
+title: "Herramientas para la elaboración rápida de materiales docentes"
+subtitle: "Uso de Markdown y Pandoc para la confección de documentos, presentaciones, y más"
+abstract: "A menudo, como docentes, queremos elaborar material de estudio y/o de apoyo a la docencia de cara a hacer nuestra asignatura más cómoda de estudiar y nuestras clases más llevaderas y entretenidas de cara al alumnado. Sin embargo, muchas veces esta intención se ve mermada por la poca intuitividad y/o los frecuentes fallos de las herramientas tradicionales, principalmente en matemáticas, física y similares, donde es común el uso de LaTeX. En este curso introduciré una utilidad cuya sintaxis es mucho más simple y produce resultados similares, en ocasiones hasta mejores: Markdown. Unido al uso de 'pandoc', este lenguaje puede producir presentaciones, documentos, informes, páginas web... todo tipo de recursos con muy poco esfuerzo."
+author:
+    - Juan Antonio Villegas
+institute:
+    - Departamento de Matemática Aplicada. Universidad de Granada
+date: \today
+geometry: "left=3cm,right=3cm,top=2cm,bottom=2cm"

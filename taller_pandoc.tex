@@ -1,0 +1,405 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\ifLuaTeX
+  \usepackage{luacolor}
+  \usepackage[soul]{lua-ul}
+\else
+  \usepackage{soul}
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{spanish}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Herramientas para la elaboración rápida de materiales docentes},
+  pdfauthor={Juan Antonio Villegas},
+  pdflang={es-ES},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Herramientas para la elaboración rápida de materiales docentes}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Uso de Markdown y Pandoc para la confección de documentos,
+presentaciones, y más}
+\author{Juan Antonio Villegas}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+A menudo, como docentes, queremos elaborar material de estudio y/o de
+apoyo a la docencia de cara a hacer nuestra asignatura más cómoda de
+estudiar y nuestras clases más llevaderas y entretenidas de cara al
+alumnado. Sin embargo, muchas veces esta intención se ve mermada por la
+poca intuitividad y/o los frecuentes fallos de las herramientas
+tradicionales, principalmente en matemáticas, física y similares, donde
+es común el uso de LaTeX. En este curso introduciré una utilidad cuya
+sintaxis es mucho más simple y produce resultados similares, en
+ocasiones hasta mejores: Markdown. Unido al uso de `pandoc', este
+lenguaje puede producir presentaciones, documentos, informes, páginas
+web\ldots{} todo tipo de recursos con muy poco esfuerzo.
+\end{abstract}
+
+\section{Introducción a Markdown}\label{introducciuxf3n-a-markdown}
+
+Markdown es:
+
+\begin{itemize}
+\tightlist
+\item
+  Un lenguaje de programación muy sencillo
+\item
+  Una interfaz simplificada de HTML
+\item
+  El paso previo a obtener documentos PDF, \LaTeX o presentaciones.
+\end{itemize}
+
+\subsection{Posibles usos de Markdown}\label{posibles-usos-de-markdown}
+
+\begin{itemize}
+\tightlist
+\item
+  Los propios ficheros markdown \texttt{*.md}, si se dispone de un
+  renderizador como el de
+  \href{https://code.visualstudio.com/}{\texttt{VSCode}} o
+  \href{https://typora.io/}{\texttt{Typora}} pueden ser útiles por sí
+  mismos.
+\item
+  Sin embargo, hay que tener cuidado, pues las visualizaciones que
+  ofrecen estos programas no siempre corresponden con lo que
+  posteriormente podemos obtener con pandoc.
+\item
+  También se utiliza en celdas de texto en notebooks como los de
+  \texttt{Jupyter} o \texttt{RStudio}.
+\item
+  \textbf{El motivo de este taller}: Como paso previo a una compilación
+  con \texttt{pandoc}, mediante la cual nuestro sencillo documento de
+  markdown se convertirá en un PDF estilo Latex, en un documento
+  \texttt{.tex} (transformando los elementos de sintaxis sencilla de
+  markdown en latex), en una presentación, en un documento HTML\ldots{}
+\end{itemize}
+
+\subsection{Sintaxis Markdown}\label{sintaxis-markdown}
+
+\subsubsection{Títulos}\label{tuxedtulos}
+
+\begin{verbatim}
+# Título 1
+## Título 2
+### Título 3
+#### Título 4
+##### Título 5
+\end{verbatim}
+
+\subsubsection{Estilos de letra}\label{estilos-de-letra}
+
+\begin{verbatim}
+**negrita**
+*cursiva*
+~~tachada~~
+<u>subrayada</u> <!-- Sintaxis HTML -->
+\end{verbatim}
+
+\textbf{negrita} \emph{cursiva} \st{tachada} subrayada
+
+\subsubsection{Listas}\label{listas}
+
+\begin{verbatim}
+Lista:
+* item 1
+
+* item 2
+
+    * item 2.1
+
+    * item 2.2
+
+        * item 2.2.1
+\end{verbatim}
+
+Lista:
+
+\begin{itemize}
+\item
+  item 1
+\item
+  item 2
+
+  \begin{itemize}
+  \item
+    item 2.1
+  \item
+    item 2.2
+
+    \begin{itemize}
+    \tightlist
+    \item
+      item 2.2.1
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Tablas}\label{tablas}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+\textbf{Nombre} & \textbf{Departamento} & \textbf{Cargo} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Juan Antonio & Matemática Aplicada & Predoc \\
+Esther & Genética & Titular \\
+\end{longtable}
+
+\subsubsection{Bloques de Código}\label{bloques-de-cuxf3digo}
+
+\textbf{Python}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ suma(a,b):}
+    \CommentTok{"""Función suma}
+\CommentTok{        Input: Dos números enteros o reales a y b}
+\CommentTok{        Output: La suma de los números a y b (a+b)}
+\CommentTok{    """}
+    \ControlFlowTok{return}\NormalTok{ a }\OperatorTok{+}\NormalTok{ b}
+
+\NormalTok{a }\OperatorTok{=} \DecValTok{1}
+\NormalTok{b }\OperatorTok{=} \DecValTok{2}
+\BuiltInTok{print}\NormalTok{(}\StringTok{"La suma a + b vale "} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(suma(a,b)))}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{C++}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{float}\NormalTok{ suma}\OperatorTok{(}\DataTypeTok{float}\NormalTok{ a}\OperatorTok{,} \DataTypeTok{float}\NormalTok{ b}\OperatorTok{)} \OperatorTok{\{}
+    \ControlFlowTok{return}\NormalTok{ a }\OperatorTok{+}\NormalTok{ b}\OperatorTok{;}
+\OperatorTok{\}}
+\DataTypeTok{int}\NormalTok{ main}\OperatorTok{()} \OperatorTok{\{}
+    \DataTypeTok{int}\NormalTok{ a }\OperatorTok{=} \DecValTok{1}\OperatorTok{,}\NormalTok{ b }\OperatorTok{=} \DecValTok{2}\OperatorTok{;}
+\NormalTok{    cout }\OperatorTok{\textless{}\textless{}} \StringTok{"La suma a + b vale"} \OperatorTok{\textless{}\textless{}}\NormalTok{ suma}\OperatorTok{(}\NormalTok{a}\OperatorTok{,}\NormalTok{b}\OperatorTok{);}
+\OperatorTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{HTML}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DataTypeTok{\textless{}}\KeywordTok{html}\DataTypeTok{\textgreater{}}
+    \DataTypeTok{\textless{}}\KeywordTok{head}\DataTypeTok{\textgreater{}}
+\NormalTok{        ...}
+    \DataTypeTok{\textless{}/}\KeywordTok{head}\DataTypeTok{\textgreater{}}
+    \DataTypeTok{\textless{}}\KeywordTok{body}\DataTypeTok{\textgreater{}}
+\NormalTok{        ...}
+    \DataTypeTok{\textless{}/}\KeywordTok{body}\DataTypeTok{\textgreater{}}
+\DataTypeTok{\textless{}/}\KeywordTok{html}\DataTypeTok{\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+También es posible incluir \emph{inline} pequeños fragmentos de código
+\texttt{de\ esta\ forma}, para ello se usan los caracteres ``. Por
+ejemplo: Este fichero se llama \texttt{taller\_pandoc.md}.
+
+\subsubsection{HTML y Latex incrustado}\label{html-y-latex-incrustado}
+
+Podemos utilizar cualquier etiqueta HTML y funcionará de la misma manera
+que la sintaxis propia de Markdown, mira la siguiente lista:
+
+Item 1
+
+Item 2 en negrita
+
+Item 3 en azul
+
+También podemos utilizar expresiones de \LaTeX, y si posteriormente
+compilamos este documento con \LaTeX podemos también incluir cualquier
+elemento propio de la sintaxis \LaTeX, pero con cuidado, pues si
+producimos un elemento de otro tipo los elementos propios de latex no
+siempre funcionarán.
+
+Por ejemplo, sabemos que, si queremos encontrar las raíces reales (en
+\(\mathbb R\)) o complejas (en \(\mathbb C\)) de la ecuación de segundo
+grado \(ax^2 + bx + c = 0\), podemos utilizar la expresión
+\begin{equation}
+\label{eq:segundo-grado}
+x_i = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}, \ \ i=1,2
+\end{equation} y tenemos que, si \(x_1\) y \(x_2\) son las soluciones de
+\eqref{eq:segundo-grado}, entonces podemos escribir \[
+ax^2 + bx + c = a(x-x_1)(x-x_2)
+\]
+
+\section{Generación de materiales docentes con
+Pandoc}\label{generaciuxf3n-de-materiales-docentes-con-pandoc}
+
+\subsection{¿Qué es y para qué sirve
+pandoc?}\label{quuxe9-es-y-para-quuxe9-sirve-pandoc}
+
+Consultar su \href{https://www.pandoc.org/}{página web} y su
+\href{https://pandoc.org/MANUAL.html}{documentación}.
+
+\begin{quote}
+\emph{``Pandoc: a universal document converter. If you need to convert
+files from one markup format into another, pandoc is your swiss-army
+knife.''}
+\end{quote}
+
+Pandoc es un programa que transforma documentos escritos en un
+determinado lenguaje de etiquetas (`markup language') en otro distinto.
+Admite una gran cantidad de transformaciones, pero las más utilizadas
+son:
+
+\begin{itemize}
+\tightlist
+\item
+  Markdown \(\rightarrow\) \LaTeX
+\item
+  Markdown \(\rightarrow\) PDF (a través de Latex)
+\item
+  Markdown \(\rightarrow\) HTML
+\end{itemize}
+
+\textbf{Requisitos:} Compilador de Latex
+(\href{https://miktex.org/}{miktex}), y por supuesto
+\href{https://pandoc.org/installing.html}{pandoc}.
+
+\subsection{Ejemplos de uso}\label{ejemplos-de-uso}
+
+Como hemos dicho anteriormente, a partir de un documento markdown
+podemos generar un documento latex, y también un PDF compilado por
+latex. Tan solo necesitamos la orden
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Si se desea un PDF}
+\ExtensionTok{pandoc} \AttributeTok{{-}t}\NormalTok{ latex }\AttributeTok{{-}o} \OperatorTok{\textless{}}\NormalTok{nombre\_del\_archivo}\OperatorTok{\textgreater{}}\NormalTok{.pdf }\DataTypeTok{\textbackslash{}}
+\NormalTok{    [{-}{-}metadata{-}file=}\OperatorTok{\textless{}}\NormalTok{nombre\_archivo\_conf}\OperatorTok{\textgreater{}}\NormalTok{.yaml] }\DataTypeTok{\textbackslash{}}
+    \OperatorTok{\textless{}}\NormalTok{nombre\_del\_archivo}\OperatorTok{\textgreater{}}\NormalTok{.md}
+
+\CommentTok{\# Si se desea un .tex  }
+\ExtensionTok{pandoc} \AttributeTok{{-}s} \AttributeTok{{-}t}\NormalTok{ latex }\AttributeTok{{-}o} \OperatorTok{\textless{}}\NormalTok{nombre\_del\_archivo}\OperatorTok{\textgreater{}}\NormalTok{.tex }\DataTypeTok{\textbackslash{}}
+\NormalTok{    [{-}{-}metadata{-}file=}\OperatorTok{\textless{}}\NormalTok{nombre\_archivo\_conf}\OperatorTok{\textgreater{}}\NormalTok{.yaml] }\DataTypeTok{\textbackslash{}}
+    \OperatorTok{\textless{}}\NormalTok{nombre\_del\_archivo}\OperatorTok{\textgreater{}}\NormalTok{.md}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Si se desea un HTML}
+\ExtensionTok{pandoc} \AttributeTok{{-}s} \AttributeTok{{-}o} \OperatorTok{\textless{}}\NormalTok{nombre\_del\_archivo}\OperatorTok{\textgreater{}}\NormalTok{.html }\DataTypeTok{\textbackslash{}}
+\NormalTok{    [{-}{-}metadata{-}file=}\OperatorTok{\textless{}}\NormalTok{nombre\_archivo\_conf}\OperatorTok{\textgreater{}}\NormalTok{.yaml] }\DataTypeTok{\textbackslash{}}
+    \OperatorTok{\textless{}}\NormalTok{nombre\_del\_archivo}\OperatorTok{\textgreater{}}\NormalTok{.md}
+\end{Highlighting}
+\end{Shaded}
+
+Además de documentos PDF y latex, también podemos crear presentaciones.
+
+\end{document}
