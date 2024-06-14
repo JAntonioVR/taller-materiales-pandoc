@@ -1,3 +1,5 @@
+![Repositorio de GitHub con los materiales](QR_repo.png)
+
 # Introducción a Markdown
 
 Markdown es:
