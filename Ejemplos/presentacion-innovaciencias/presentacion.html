@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Juan Antonio Villegas Recio">
+  <title>Diseño y Programación Web</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    .reveal .sourceCode {  /* see #7635 */
+      overflow: visible;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Diseño y Programación Web</h1>
+  <p class="subtitle">Herramientas y facilidades para crear una página web</p>
+  <p class="author">Juan Antonio Villegas Recio</p>
+  <p class="date">26 de Junio de 2023</p>
+</section>
+<section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Contenidos</h2>
+<ul>
+<li><a href="#/dos-enfoques">Dos enfoques</a></li>
+<li><a href="#/herramientas">Herramientas</a></li>
+<li><a href="#/web-de-innovaciencias">Web de Innovaciencias</a></li>
+<li><a href="#/conclusiones">Conclusiones</a></li>
+</ul>
+</nav>
+</section>
+
+<section>
+<section id="dos-enfoques" class="title-slide slide level1">
+<h1>Dos enfoques</h1>
+<p>Dos puntos de vista distintos:</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img src="img/web-design.png" width=70%></p>
+<p>Diseño web</p>
+</div><div class="column" style="width:40%;">
+<p><img src="img/web-programming.png" width=70%></p>
+<p><strong>Programación web</strong></p>
+</div>
+</div>
+</section>
+<section id="diseño-vs.-programación" class="slide level2">
+<h2>Diseño vs. Programación</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Diseñadores, artistas</li>
+<li>Importancia al aspecto visual</li>
+<li>Bajos conocimientos en programación</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Ingenieros, programadores</li>
+<li>Importancia a la funcionalidad</li>
+<li>Necesidad de conocimientos en programación</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<p>Lo ideal: <strong>EQUILIBRIO</strong></p>
+</div>
+</section>
+<section id="diseño-vs.-programación-1" class="slide level2">
+<h2>Diseño vs. Programación</h2>
+<p>Aunque depende del propósito</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="img/wikipedia.png" width=120%><br></p>
+<ul>
+<li><a href="https://docs.python.org/3/">Documentación de Python</a></li>
+<li><a href="https://www.elmundo.es/">El mundo</a></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img src="img/abac.png" width=120%><br></p>
+<ul>
+<li><a href="https://abacrestaurant.com/es/">ABaC</a></li>
+<li><a href="https://www.hotelartsbarcelona.com/">Hotel Arts Barcelona</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="diseño-vs.-programación-2" class="slide level2">
+<h2>Diseño vs. Programación</h2>
+<p>Ambas confluyen en un aspecto:</p>
+<div class="fragment">
+<p><img src="img/diseno.png" width=30%><br> La Experiencia de Usuario</p>
+</div>
+</section>
+<section id="diseño-vs.-programación-3" class="slide level2">
+<h2>Diseño vs. Programación</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img src="img/programming.png" width=70%><br></p>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<ul>
+<li>Webs fáciles de utilizar</li>
+<li>Accesibles</li>
+<li>Coherentes</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="diseño-web" class="slide level2">
+<h2>Diseño Web</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><img data-src="img/63ec1fd4d0d2f377701925.jpg" /></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="img/portfolio.png" /></p>
+</div>
+</div>
+<p>Cuidado de la apariencia, la disposición de los elementos, las proporciones, la gama de colores…</p>
+</section>
+<section id="programación-web" class="slide level2">
+<h2>Programación Web</h2>
+<p>Varios paradigmas, se suele enseñar el Modelo-Vista-Controlador.</p>
+<p><img data-src="img/MVC.png" /></p>
+<p>Funcionalidad, cuidado del código, independencia entre capas.</p>
+</section>
+<section id="lenguajes-y-sistemas" class="slide level2">
+<h2>Lenguajes y sistemas</h2>
+<p><img data-src="img/LS.png" /></p>
+<p>Para que todo funcione correctamente:</p>
+<ul>
+<li>Servidor web</li>
+<li>Dominio y alojamiento web.</li>
+</ul>
+</section></section>
+<section>
+<section id="herramientas" class="title-slide slide level1">
+<h1>Herramientas</h1>
+
+</section>
+<section id="para-diseñadores" class="slide level2">
+<h2>Para diseñadores</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p><img src="https://1000marcas.net/wp-content/uploads/2021/06/Illustrator-Logo.png" width="100%"></p>
+<p>Adobe Illustrator</p>
+</div><div class="column" style="width:30%;">
+<p><img src="https://assets.stickpng.com/images/62c6bc0beee9410fe137d91e.png" width="100%"></p>
+<p>Figma</p>
+</div><div class="column" style="width:30%;">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/2101px-Adobe_XD_CC_icon.svg.png" width="65%"></p>
+<p>Adobe XD</p>
+</div>
+</div>
+</section>
+<section id="para-diseñadores-1" class="slide level2">
+<h2>Para diseñadores</h2>
+<p><img src="img/figma.png"></p>
+</section>
+<section id="para-programadores" class="slide level2">
+<h2>Para programadores</h2>
+<ul>
+<li>Editores de código: VSCode, Emacs, Atom, …</li>
+<li>Frameworks y bibliotecas:
+<ul>
+<li>En el lado del servidor: Django, Flask, phpMyAdmin, node.js,…</li>
+<li>En el lado del cliente: Bootstrap, Tailwind, jQuery, motores de plantillas…</li>
+</ul></li>
+</ul>
+<p><img data-src="img/LS.png" /></p>
+</section></section>
+<section>
+<section id="web-de-innovaciencias" class="title-slide slide level1">
+<h1>Web de Innovaciencias</h1>
+
+</section>
+<section id="software-utilizado" class="slide level2">
+<h2>Software utilizado</h2>
+<p><img data-src="img/Desktop%20-%201.png" /></p>
+</section></section>
+<section>
+<section id="conclusiones" class="title-slide slide level1">
+<h1>Conclusiones</h1>
+<ul>
+<li>No hay diseño sin programación ni programación sin diseño</li>
+<li>Cuidado del producto y del consumidor (usuario)</li>
+<li>Libertad en el uso de herramientas</li>
+<li>Cada aplicación es diferente</li>
+</ul>
+</section>
+<section id="referencias" class="slide level2">
+<h2>Referencias</h2>
+<ul>
+<li><a href="https://www.flaticon.com/free-icons/data" title="data icons">Data icons creados por Freepik - Flaticon</a></li>
+<li><a href="https://www.flaticon.com/free-icons/front-end" title="front-end icons">Front-end icons creados por Flat Icons - Flaticon</a></li>
+<li><a href="https://www.awwwards.com/sites/inomaly-abstract-wall-art">Inomaly abstract wall art - Awwwards</a></li>
+<li><a href="https://www.flaticon.com/free-icons/mood-board" title="mood-board icons">Mood-board icons creados por Freepik - Flaticon</a></li>
+<li><a href="https://www.flaticon.es/iconos-gratis/negocios-y-finanzas" title="negocios y finanzas iconos">Negocios y finanzas iconos creados por Muhammad Atif - Flaticon</a></li>
+<li><a href="https://www.behance.net/gallery/85873667/Photographers-Portfolio-Landing-Page?tracking_source=search_projects_views%7CPhotographer+Portfolio">Photographers Portfolio Landing Page - Behance</a></li>
+<li><a href="https://www.flaticon.com/free-icons/web-programming" title="web programming icons">Web programming icons creados por SBTS2018 - Flaticon</a></li>
+<li><a href="https://www.awwwards.com/sites/uptown-cocktails">Uptown Cocktails - Awwwards</a></li>
+</ul>
+</section>
+<section id="muchas-gracias-por-su-atención" class="slide level2">
+<h2>Muchas gracias por su atención</h2>
+<h2>
+¿Alguna pregunta?
+</h2>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    </body>
+</html>
