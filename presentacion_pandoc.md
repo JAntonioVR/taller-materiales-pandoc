@@ -1,5 +1,34 @@
 ![Repositorio de GitHub con los materiales](QR_repo.png)
 
+# Motivación
+
+## Herramientas comunes para crear documentos y presentaciones
+
+Algunas de las aplicaciones más conocidas y utilizadas para crear material como documentos y presentaciones son:
+
+* Microsoft Office Word / Procesador de textos OpenOffice o LibreOffice.
+* Microsoft Office PowerPoint / Presentaciones OpenOffice o LibreOffice.
+* Herramientas de Google Docs o Google Presentations.
+* Canva, Prezi, ...
+
+Más habitual en matemáticas y física usar \LaTeX.
+
+## Inconvenientes de \LaTeX
+
+* Archivos generados en compilación
+* Sintaxis:
+
+    ```tex
+    \begin{enumerate}[label=\alph*)]
+        \item Primer ítem
+        \item Segundo ítem
+        \item Tercer ítem
+    \end{enumerate}
+    ```
+    
+* Errores a veces incomprensibles
+    
+
 # Introducción a Markdown
 
 Markdown es:

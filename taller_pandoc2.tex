@@ -1,10 +1,13 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-%
 \documentclass[
+  spanish,
 ]{article}
+\usepackage{xcolor}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -35,8 +38,6 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -91,23 +92,18 @@
 \else
   \usepackage{soul}
 \fi
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off,]{babel}
+\else
+\usepackage[bidi=default,shorthands=off,]{babel}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-\ifLuaTeX
-\usepackage[bidi=basic]{babel}
-\else
-\usepackage[bidi=default]{babel}
-\fi
-\babelprovide[main,import]{spanish}
-% get rid of language-specific shorthands (see #6817):
-\let\LanguageShortHands\languageshorthands
-\def\languageshorthands#1{}
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
@@ -144,6 +140,55 @@ ocasiones hasta mejores: Markdown. Unido al uso de `pandoc', este
 lenguaje puede producir presentaciones, documentos, informes, páginas
 web\ldots{} todo tipo de recursos con muy poco esfuerzo.
 \end{abstract}
+
+\section{Motivación}\label{motivaciuxf3n}
+
+\subsection{Herramientas comunes para crear documentos y
+presentaciones}\label{herramientas-comunes-para-crear-documentos-y-presentaciones}
+
+Algunas de las aplicaciones más conocidas y utilizadas para crear
+material como documentos y presentaciones son:
+
+\begin{itemize}
+\tightlist
+\item
+  Microsoft Office Word / Procesador de textos OpenOffice o LibreOffice.
+\item
+  Microsoft Office PowerPoint / Presentaciones OpenOffice o LibreOffice.
+\item
+  Herramientas de Google Docs o Google Presentations.
+\item
+  Canva, Prezi, \ldots{}
+\end{itemize}
+
+Más habitual en matemáticas y física usar \LaTeX.
+
+\subsection{\texorpdfstring{Inconvenientes de
+\LaTeX}{Inconvenientes de }}\label{inconvenientes-de}
+
+\begin{itemize}
+\tightlist
+\item
+  Archivos generados en compilación
+\item
+  Sintaxis:
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textbackslash{}begin}\NormalTok{\{}\ExtensionTok{enumerate}\NormalTok{\}[label=}\FunctionTok{\textbackslash{}alph*}\NormalTok{)]}
+    \FunctionTok{\textbackslash{}item}\NormalTok{ Primer ítem}
+    \FunctionTok{\textbackslash{}item}\NormalTok{ Segundo ítem}
+    \FunctionTok{\textbackslash{}item}\NormalTok{ Tercer ítem}
+\KeywordTok{\textbackslash{}end}\NormalTok{\{}\ExtensionTok{enumerate}\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  Errores a veces incomprensibles
+\end{itemize}
 
 \section{Introducción a Markdown}\label{introducciuxf3n-a-markdown}
 

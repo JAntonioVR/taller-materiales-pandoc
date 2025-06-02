@@ -28,9 +28,11 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -93,7 +95,7 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/beige.css" id="theme">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/Warsaw.css" id="theme">
 </head>
 <body>
   <div class="reveal">
@@ -106,45 +108,20 @@ docentes</h1>
   <p class="institute">Departamento de Matemática Aplicada. Universidad
 de Granada</p>
 </section>
-<section id="TOC">
-<nav role="doc-toc"> 
-<h2 id="toc-title">Esquema</h2>
-<ul>
-<li><a href="#/introducción" id="/toc-introducción">Introducción</a>
-<ul>
-<li><a href="#/punto-1.1" id="/toc-punto-1.1">Punto 1.1</a></li>
-<li><a href="#/punto-1.2" id="/toc-punto-1.2">Punto 1.2</a></li>
-</ul></li>
-<li><a href="#/columnas" id="/toc-columnas">Columnas</a>
-<ul>
-<li><a href="#/teorema" id="/toc-teorema">Teorema</a></li>
-</ul></li>
-<li><a href="#/listado-de-opciones"
-id="/toc-listado-de-opciones">Listado de opciones</a></li>
-<li><a href="#/código" id="/toc-código">Código</a></li>
-</ul>
-</nav>
-</section>
 
-<section>
-<section id="introducción" class="title-slide slide level1">
+<section id="introducción" class="slide level1">
 <h1>Introducción</h1>
 <p></p>
-</section>
-<section id="punto-1.1" class="slide level2">
-<h2>Punto 1.1</h2>
+<h2 id="punto-1.1">Punto 1.1</h2>
 <p>Hola</p>
-</section>
-<section id="punto-1.2" class="slide level2">
-<h2>Punto 1.2</h2>
+<h2 id="punto-1.2">Punto 1.2</h2>
 <p>Adios</p>
 <ul>
 <li>asignatura</li>
 <li>sss</li>
 </ul>
-</section></section>
-<section>
-<section id="columnas" class="title-slide slide level1">
+</section>
+<section id="columnas" class="slide level1">
 <h1>Columnas</h1>
 <div class="columns">
 <div class="column" style="width:60%;">
@@ -159,12 +136,10 @@ scrambled it to make a type specimen book.</p>
 </figure>
 </div>
 </div>
-</section>
-<section id="teorema" class="slide level2">
-<h2>Teorema</h2>
+<h2 id="teorema">Teorema</h2>
 <p>Al pulpo le queda genial el saxofón</p>
-</section></section>
-<section id="listado-de-opciones" class="title-slide slide level1">
+</section>
+<section id="listado-de-opciones" class="slide level1">
 <h1>Listado de opciones</h1>
 <ol type="1">
 <li>Paso 1.</li>
@@ -178,14 +153,10 @@ scrambled it to make a type specimen book.</p>
 <ol start="3" type="1">
 <li>Paso 3.</li>
 </ol>
-<p>Voy a hacer una integral: <span
-class="math display">\[\begin{equation}
-\int_a^b f(x)dx
-\end{equation}\]</span></p>
+<p>Voy a hacer una integral: </p>
 </div>
 </section>
-
-<section id="código" class="title-slide slide level1">
+<section id="código" class="slide level1">
 <h1>Código</h1>
 <p>Código python:</p>
 <div class="sourceCode" id="cb1"><pre
@@ -207,7 +178,6 @@ class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="
   <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
-  <script src="https://unpkg.com/reveal.js@^4//plugin/math/math.js"></script>
 
   <script>
 
@@ -354,26 +324,8 @@ class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="
         // viewDistance in order to save resources.
         mobileViewDistance: 2,
 
-        math: {
-          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
-          config: 'TeX-AMS_HTML-full',
-          tex2jax: {
-            inlineMath: [['\\(','\\)']],
-            displayMath: [['\\[','\\]']],
-            balanceBraces: true,
-            processEscapes: false,
-            processRefs: true,
-            processEnvironments: true,
-            preview: 'TeX',
-            skipTags: ['script','noscript','style','textarea','pre','code'],
-            ignoreClass: 'tex2jax_ignore',
-            processClass: 'tex2jax_process'
-          },
-        },
-
         // reveal.js plugins
         plugins: [
-          RevealMath,
           RevealNotes,
           RevealSearch,
           RevealZoom

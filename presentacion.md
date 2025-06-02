@@ -4,9 +4,10 @@ title: "Herramientas de elaboración de materiales docentes"
 author: Juan Antonio Villegas
 institute: Departamento de Matemática Aplicada. Universidad de Granada
 date: \today
-theme: Warsaw
+theme: Marburg
 toc-title: Esquema
 ---
+
 # Introducción
 
 \textbf{Hola}

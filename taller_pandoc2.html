@@ -119,8 +119,8 @@
      overflow: visible;
     }
     hr {
-      background-color: #1a1a1a;
       border: none;
+      border-top: 1px solid #1a1a1a;
       height: 1px;
       margin: 1em 0;
     }
@@ -177,9 +177,11 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
     /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -242,13 +244,6 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
-  type="text/javascript"></script>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -272,6 +267,35 @@ lenguaje puede producir presentaciones, documentos, informes, páginas
 web… todo tipo de recursos con muy poco esfuerzo.
 </div>
 </header>
+<h1 id="motivación">Motivación</h1>
+<h2
+id="herramientas-comunes-para-crear-documentos-y-presentaciones">Herramientas
+comunes para crear documentos y presentaciones</h2>
+<p>Algunas de las aplicaciones más conocidas y utilizadas para crear
+material como documentos y presentaciones son:</p>
+<ul>
+<li>Microsoft Office Word / Procesador de textos OpenOffice o
+LibreOffice.</li>
+<li>Microsoft Office PowerPoint / Presentaciones OpenOffice o
+LibreOffice.</li>
+<li>Herramientas de Google Docs o Google Presentations.</li>
+<li>Canva, Prezi, …</li>
+</ul>
+<p>Más habitual en matemáticas y física usar .</p>
+<h2 id="inconvenientes-de">Inconvenientes de </h2>
+<ul>
+<li>Archivos generados en compilación</li>
+<li>Sintaxis:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode tex"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">enumerate</span>}[label=<span class="fu">\alph*</span>)]</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Primer ítem</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Segundo ítem</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">\item</span> Tercer ítem</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">enumerate</span>}</span></code></pre></div>
+<ul>
+<li>Errores a veces incomprensibles</li>
+</ul>
 <h1 id="introducción-a-markdown">Introducción a Markdown</h1>
 <p>Markdown es:</p>
 <ul>
@@ -338,19 +362,19 @@ HTML…</li>
 <h3 id="tablas">Tablas</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th><strong>Nombre</strong></th>
 <th><strong>Departamento</strong></th>
 <th><strong>Cargo</strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Juan Antonio</td>
 <td>Matemática Aplicada</td>
 <td>Predoc</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Esther</td>
 <td>Genética</td>
 <td>Titular</td>
@@ -359,36 +383,36 @@ HTML…</li>
 </table>
 <h3 id="bloques-de-código">Bloques de Código</h3>
 <p><strong>Python</strong></p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> suma(a,b):</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Función suma</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">        Input: Dos números enteros o reales a y b</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">        Output: La suma de los números a y b (a+b)</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;La suma a + b vale &quot;</span> <span class="op">+</span> <span class="bu">str</span>(suma(a,b)))</span></code></pre></div>
-<p><strong>C++</strong></p>
 <div class="sourceCode" id="cb5"><pre
-class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> suma<span class="op">(</span><span class="dt">float</span> a<span class="op">,</span> <span class="dt">float</span> b<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b<span class="op">;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> a <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">&quot;La suma a + b vale&quot;</span> <span class="op">&lt;&lt;</span> suma<span class="op">(</span>a<span class="op">,</span>b<span class="op">);</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p><strong>HTML</strong></p>
+class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> suma(a,b):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Función suma</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">        Input: Dos números enteros o reales a y b</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">        Output: La suma de los números a y b (a+b)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;La suma a + b vale &quot;</span> <span class="op">+</span> <span class="bu">str</span>(suma(a,b)))</span></code></pre></div>
+<p><strong>C++</strong></p>
 <div class="sourceCode" id="cb6"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        ...</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        ...</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">float</span> suma<span class="op">(</span><span class="dt">float</span> a<span class="op">,</span> <span class="dt">float</span> b<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b<span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> a <span class="op">=</span> <span class="dv">1</span><span class="op">,</span> b <span class="op">=</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    cout <span class="op">&lt;&lt;</span> <span class="st">&quot;La suma a + b vale&quot;</span> <span class="op">&lt;&lt;</span> suma<span class="op">(</span>a<span class="op">,</span>b<span class="op">);</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p><strong>HTML</strong></p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        ...</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        ...</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
 <p>También es posible incluir <em>inline</em> pequeños fragmentos de
 código <code>de esta forma</code>, para ello se usan los caracteres ``.
 Por ejemplo: Este fichero se llama <code>taller_pandoc.md</code>.</p>
@@ -411,19 +435,14 @@ compilamos este documento con podemos también incluir cualquier elemento
 propio de la sintaxis , pero con cuidado, pues si producimos un elemento
 de otro tipo los elementos propios de latex no siempre funcionarán.</p>
 <p>Por ejemplo, sabemos que, si queremos encontrar las raíces reales (en
-<span class="math inline">\(\mathbb R\)</span>) o complejas (en <span
-class="math inline">\(\mathbb C\)</span>) de la ecuación de segundo
-grado <span class="math inline">\(ax^2 + bx + c = 0\)</span>, podemos
-utilizar la expresión <span class="math display">\[\begin{equation}
-\label{eq:segundo-grado}
-x_i = \dfrac{-b \pm \sqrt{b^2-4ac}}{2a}, \ \ i=1,2
-\end{equation}\]</span> y tenemos que, si <span
-class="math inline">\(x_1\)</span> y <span
-class="math inline">\(x_2\)</span> son las soluciones de <span
-class="math inline">\(\eqref{eq:segundo-grado}\)</span>, entonces
-podemos escribir <span class="math display">\[
-ax^2 + bx + c = a(x-x_1)(x-x_2)
-\]</span></p>
+<span class="math inline">ℝ</span>) o complejas (en <span
+class="math inline">ℂ</span>) de la ecuación de segundo grado <span
+class="math inline"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em> + <em>c</em> = 0</span>,
+podemos utilizar la expresión y tenemos que, si <span
+class="math inline"><em>x</em><sub>1</sub></span> y <span
+class="math inline"><em>x</em><sub>2</sub></span> son las soluciones de
+, entonces podemos escribir <span
+class="math display"><em>a</em><em>x</em><sup>2</sup> + <em>b</em><em>x</em> + <em>c</em> = <em>a</em>(<em>x</em> − <em>x</em><sub>1</sub>)(<em>x</em> − <em>x</em><sub>2</sub>)</span></p>
 <h1 id="generación-de-materiales-docentes-con-pandoc">Generación de
 materiales docentes con Pandoc</h1>
 <h2 id="qué-es-y-para-qué-sirve-pandoc">¿Qué es y para qué sirve
@@ -440,10 +459,10 @@ determinado lenguaje de etiquetas (‘markup language’) en otro distinto.
 Admite una gran cantidad de transformaciones, pero las más utilizadas
 son:</p>
 <ul>
-<li>Markdown <span class="math inline">\(\rightarrow\)</span> </li>
-<li>Markdown <span class="math inline">\(\rightarrow\)</span> PDF (a
-través de Latex)</li>
-<li>Markdown <span class="math inline">\(\rightarrow\)</span> HTML</li>
+<li>Markdown <span class="math inline">→</span> </li>
+<li>Markdown <span class="math inline">→</span> PDF (a través de
+Latex)</li>
+<li>Markdown <span class="math inline">→</span> HTML</li>
 </ul>
 <p><strong>Requisitos:</strong> Compilador de Latex (<a
 href="https://miktex.org/">miktex</a>), y por supuesto <a
@@ -452,21 +471,21 @@ href="https://pandoc.org/installing.html">pandoc</a>.</p>
 <p>Como hemos dicho anteriormente, a partir de un documento markdown
 podemos generar un documento latex, y también un PDF compilado por
 latex. Tan solo necesitamos la orden</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Si se desea un PDF</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-t</span> latex <span class="at">-o</span> <span class="op">&lt;</span>nombre_del_archivo<span class="op">&gt;</span>.pdf <span class="dt">\</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    [--metadata-file=<span class="op">&lt;</span>nombre_archivo_conf<span class="op">&gt;</span>.yaml] <span class="dt">\</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>nombre_del_archivo<span class="op">&gt;</span>.md</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Si se desea un .tex  </span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> <span class="at">-t</span> latex <span class="at">-o</span> <span class="op">&lt;</span>nombre_del_archivo<span class="op">&gt;</span>.tex <span class="dt">\</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    [--metadata-file=<span class="op">&lt;</span>nombre_archivo_conf<span class="op">&gt;</span>.yaml] <span class="dt">\</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>nombre_del_archivo<span class="op">&gt;</span>.md</span></code></pre></div>
 <div class="sourceCode" id="cb8"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Si se desea un HTML</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> <span class="at">-o</span> <span class="op">&lt;</span>nombre_del_archivo<span class="op">&gt;</span>.html <span class="dt">\</span></span>
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Si se desea un PDF</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-t</span> latex <span class="at">-o</span> <span class="op">&lt;</span>nombre_del_archivo<span class="op">&gt;</span>.pdf <span class="dt">\</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    [--metadata-file=<span class="op">&lt;</span>nombre_archivo_conf<span class="op">&gt;</span>.yaml] <span class="dt">\</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>nombre_del_archivo<span class="op">&gt;</span>.md</span></code></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>nombre_del_archivo<span class="op">&gt;</span>.md</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Si se desea un .tex  </span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> <span class="at">-t</span> latex <span class="at">-o</span> <span class="op">&lt;</span>nombre_del_archivo<span class="op">&gt;</span>.tex <span class="dt">\</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    [--metadata-file=<span class="op">&lt;</span>nombre_archivo_conf<span class="op">&gt;</span>.yaml] <span class="dt">\</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>nombre_del_archivo<span class="op">&gt;</span>.md</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Si se desea un HTML</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> <span class="at">-s</span> <span class="at">-o</span> <span class="op">&lt;</span>nombre_del_archivo<span class="op">&gt;</span>.html <span class="dt">\</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    [--metadata-file=<span class="op">&lt;</span>nombre_archivo_conf<span class="op">&gt;</span>.yaml] <span class="dt">\</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>nombre_del_archivo<span class="op">&gt;</span>.md</span></code></pre></div>
 <p>Además de documentos PDF y latex, también podemos crear
 presentaciones.</p>
 </body>
